@@ -1,0 +1,101 @@
+{
+  "name": "reidmv-property",
+  "version": "0.1.0",
+  "author": "Reid Vandewiele",
+  "license": "Apache-2.0",
+  "summary": "Utility type for use in defined types",
+  "source": "https://github.com/reidmv/reidmv-property",
+  "project_page": "https://github.com/reidmv/reidmv-property",
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.8.0" }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "10 SP4",
+        "11 SP1",
+        "12"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    },
+    {
+      "operatingsystem": "Solaris",
+      "operatingsystemrelease": [
+        "10",
+        "11"
+      ]
+    },
+    {
+      "operatingsystem": "AIX",
+      "operatingsystemrelease": [
+        "5.3",
+        "6.1",
+        "7.1"
+      ]
+    },
+    {
+      "operatingsystem": "OSX",
+      "operatingsystemrelease": [
+        "10.9",
+        "10.10"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">=2015.2.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">=4.2.1"
+    }
+  ]
+}

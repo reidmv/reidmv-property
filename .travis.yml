@@ -1,0 +1,19 @@
+--- 
+
+# Tell Travis we don't use sudo so that we can use container infrastructure
+# for the builds.
+sudo: false
+
+# We're currently only using Travis CI for automatic Forge deployment. No real
+# test is run. This is specified here in order to override the default test.
+script: /bin/true
+
+deploy:
+  provider: puppetforge
+  user: reidmv
+  password:
+    secure: "NzfbrL3C2bti+J3PmoDRyV107cfoMMk+l5d5uQvreuD5P13NG68hAaaK97NkMVymDksPzx6gWy6pgoVugAcG213JyA+4atUdUUYV5ctWUhpqDptRk7+K5tcTlglg4BlsMzz4NFIhwyAJHUnO3kFDgJJP4s/5DlQq/04FdFOu5PMX5F9OVMJH0PTPiDuqWC2RVkMud2/GdA38JGhNsiVJR8/Re4kQUQuBJ7v+WLdX6ck1aofwhRLw8rTf5HdjA7hqQFORRbb0yJ6PQJ8/DJXP9niFTyK53tGfWclQq/yJzFMoPIRajB0MzgeKltPJi/avWsK/pAW9lr23nCqLLIG0pSj3UQIW9Bv4FYnDnCbLDqZlm4Yc2zDDFtE59ciU+orsMScM19OWCH/gryVy3jLAFdwSVtMG8E+AwpzafWqdvszNPqITMhuOdmdWIpVPBKVZF7io2iY4iYaSK/OkpHip3yg84QOXOKJHLxVhN+QRFBi1bkc50knHli3X262jgTpYQ9HHRCujIpY9KUGQllUnWQFGIdSqY8PPOVgK8ZSa8FO6Y2byDGNYan8nrVdi7caPHK7M60MbKb1zkNPNee2ECITeS2kOGaqajxZ6dHDlaN9oJ3NDfgOcay0QknlnXtCh69dKEjIl/tmOzscwpuA7XlpMYwVDshCHEaHws+skJVc="
+  on:
+    tags: true
+    # all_branches is required to use tags
+    all_branches: true
