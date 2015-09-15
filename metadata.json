@@ -1,6 +1,6 @@
 {
   "name": "reidmv-property",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Reid Vandewiele",
   "license": "Apache-2.0",
   "summary": "Utility type for use in defined types",
