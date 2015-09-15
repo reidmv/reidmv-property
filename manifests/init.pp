@@ -2,7 +2,6 @@ define property (
   $ensure,
   $get_command,
   $set_command,
-  $path         = undef,
   $user         = undef,
   $environment  = undef,
   $path         = $::path,
@@ -10,22 +9,29 @@ define property (
   require property::setup
 
   $compare       = $property::setup::compare_command
-  $get_path      = "${property::setup::vardir}/${title}_get"
+  $ext           = $property::setup::ext
+  $safe_title    = regsubst($title, '[/\\ ]', '_', 'G')
+  $get_path      = "${property::setup::vardir}/get_${safe_title}${ext}"
   $safe_get_path = shellquote($get_path)
   $safe_ensure   = shellquote($ensure)
 
-  file { "get_${title}":
+  file { "get_${safe_title}":
     ensure  => file,
-    path    => $get_command_path,
-    content => $get_command,
+    mode    => $property::setup::mode,
+    path    => $get_path,
+    content => "${shebang}${get_command}",
   }
 
-  exec { "update_${title}":
+  exec { "set ${title} = $ensure":
     command     => $set_command,
     unless      => "${compare} ${safe_get_path} ${safe_ensure}",
     path        => $path,
     user        => $user,
     environment => $environment,
+    require     => [
+      File["get_${safe_title}"],
+      File['property_compare_script'],
+    ],
   }
 
 }
